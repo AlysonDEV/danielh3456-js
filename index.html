@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RPG</title>
+</head>
+
+<body>
+
+    
+
+    <h1>Criar Personagem</h1>
+
+    <input id="nome" placeholder="Nome"><br>
+    <input id="idade" placeholder="Idade"><br>
+    <input id="raca" placeholder="Raça"><br>
+    <input id="genero" placeholder="Genero"><br>
+
+    <h3>Atributos</h3>
+
+    <input id="forca" placeholder="Força"><br>
+    <input id="destreza" placeholder="Destreza"><br>
+    <input id="percepcao" placeholder="Percepção"><br>
+    <input id="inteligencia" placeholder="Inteligência"><br>
+    <input id="resistencia" placeholder="Resistência"><br>
+
+    <button onclick="criar()">Criar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function criar() {
+            fetch('http://localhost:3000/personagem', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nome: document.getElementById('nome').value,
+                    idade: Number(document.getElementById('idade').value),
+                    raca: document.getElementById('raca').value,
+                    genero: document.getElementById('genero').value,
+                    atributos: {
+                        forca: Number(document.getElementById('forca').value),
+                        destreza: Number(document.getElementById('destreza').value),
+                        percepcao: Number(document.getElementById('percepcao').value),
+                        inteligencia: Number(document.getElementById('inteligencia').value),
+                        resistencia: Number(document.getElementById('resistencia').value)
+                    }
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("resultado").innerText = JSON.stringify(data, null, 2)
+                })
+        }
+    </script>
+
+</body>
+
+</html>

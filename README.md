@@ -91,6 +91,19 @@ curl http://localhost:3000/personagens
 
 Sinta-se à vontade para abrir issues ou pull requests. Para alterações locais: fork, branch, commit e PR.
 
+## Referência
+
+Este projeto é baseado no repositório original: https://github.com/danielh3456/js
+
+## Minhas implementações
+
+- Criação do arquivo `README.md` com instruções de instalação, execução e exemplos de uso.
+- Adição do arquivo `.gitignore` para evitar versionar `node_modules` e arquivos temporários.
+- Remoção da pasta `node_modules` do repositório local para manter o repositório limpo.
+- Inclusão do script `start` em `package.json` (`"start": "node index.js"`).
+- Atualização do `README.md` para referenciar o repositório original e fornecer exemplos de payloads.
+- Commit realizado com mensagem de assinatura: "Assinatura: Criei README.md, adicionei .gitignore e removi node_modules".
+
 ## Licença
 
 Este repositório não possui uma licença especificada. Adicione um arquivo `LICENSE` se desejar tornar o projeto reutilizável sob termos específicos.
